@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/style1.css">
+    <title>Rastgele Bir Resim</title>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Rastgele Bir Resim</h1>
+        <p>{{ resim.kategori }} - {{ resim.baslik }}</p>
+        <img src="{{ resim.url }}" alt="{{ resim.baslik }}">
+        <br>
+        <a href="resim">Başka Resim</a> | <a href="/">Ana Sayfa</a>
+    </div>
+</body>
+</html>

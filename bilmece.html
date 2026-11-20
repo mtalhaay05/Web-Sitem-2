@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/style1.css">
+    <title>Bir Bilmece</title>
+</head>
+<body>
+    <div class="container">
+        <h1>🧙‍♂️ Bir Bilmece</h1>
+        <p>{{ bilmece.soru }}</p>
+        <button type="button" onclick="document.getElementById('cvp').style.display='block'">Cevabı Göster</button>
+        <p id="cvp" style="display:none; margin-top:12px;"><strong>Cevap:</strong> {{ bilmece.cevap }}</p>
+        <br>
+        <a href="/bilmece">Yeni Bilmece</a> | <a href="/">Ana Sayfa</a>
+    </div>
+</body>
+</html>

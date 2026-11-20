@@ -1,0 +1,137 @@
+/* =========================================
+   1. RENK PALETİ (Tüm Renkler Buradan Yönetilir)
+   ========================================= */
+:root {
+    --bg-ana: #f4f6f9;          /* Sayfa arka plan rengi */
+    --bg-kart: #ffffff;         /* İçerik kutusu arka planı */
+    --ana-renk: #2563eb;        /* Ana vurgu rengi (Mavi) */
+    --ikincil-renk: #10b981;    /* İkincil vurgu / madde işaretleri (Yeşil) */
+    --uyari-renk: #ef4444;      /* Dikkat çekici uyarılar için (Kırmızı) */
+    --metin-ana: #1e293b;       /* Ana başlık ve koyu metinler */
+    --metin-ikincil: #475569;   /* Paragraf ve liste metinleri */
+    --cizgi-rengi: #e2e8f0;     /* Çerçeve ve alt çizgi renkleri */
+    --golge: rgba(0, 0, 0, 0.08);
+}
+
+/* Cihazı karanlık modda olan kullanıcılar için otomatik renk uyumu */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-ana: #0f172a;
+        --bg-kart: #1e293b;
+        --ana-renk: #60a5fa;
+        --ikincil-renk: #34d399;
+        --uyari-renk: #f87171;
+        --metin-ana: #f8fafc;
+        --metin-ikincil: #cbd5e1;
+        --cizgi-rengi: #334155;
+        --golge: rgba(0, 0, 0, 0.4);
+    }
+}
+
+/* =========================================
+   2. GENEL SAYFA YAPISI
+   ========================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-ana);
+    color: var(--metin-ikincil);
+    line-height: 1.7;
+    padding: 40px 20px;
+}
+
+/* İçeriği ortalayan ana kutu */
+.container {
+    max-width: 750px;
+    margin: 0 auto;
+    background-color: var(--bg-kart);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--cizgi-rengi);
+    box-shadow: 0 10px 25px var(--golge);
+}
+
+/* =========================================
+   3. BAŞLIKLAR VE METİNLER
+   ========================================= */
+h1 {
+    color: var(--ana-renk);
+    font-size: 2rem;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid var(--ana-renk);
+}
+
+h2 {
+    color: var(--metin-ana);
+    font-size: 1.4rem;
+    margin-top: 30px;
+    margin-bottom: 12px;
+}
+
+h3 {
+    color: var(--uyari-renk);
+    font-size: 1.15rem;
+    margin-top: 20px;
+}
+
+p {
+    margin-bottom: 16px;
+    font-size: 1.05rem;
+}
+
+/* =========================================
+   4. LİSTELER
+   ========================================= */
+ul, ol {
+    margin: 15px 0 25px 25px;
+}
+
+li {
+    margin-bottom: 10px;
+    padding-left: 5px;
+}
+
+li::marker {
+    color: var(--ikincil-renk);
+    font-weight: bold;
+}
+
+/* =========================================
+   5. BAĞLANTILAR, BUTONLAR VE GÖRSELLER
+   ========================================= */
+a {
+    color: var(--ana-renk);
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.2s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid var(--cizgi-rengi);
+    margin-top: 15px;
+    display: block;
+}
+
+/* Vurgu kutusu (İstersen <div class="uyari-kutusu"> olarak kullanabilirsin) */
+.uyari-kutusu {
+    background-color: var(--bg-ana);
+    border-left: 4px solid var(--uyari-renk);
+    padding: 15px 20px;
+    border-radius: 6px;
+    margin: 20px 0;
+    color: var(--metin-ana);
+}
